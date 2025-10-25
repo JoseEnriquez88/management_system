@@ -1,118 +1,118 @@
-import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerJSDoc from "swagger-jsdoc";
 
 const options = {
   definition: {
-    openapi: '3.1.0',
+    openapi: "3.1.0",
     info: {
-      title: 'API de Gestión de Órdenes',
-      version: '1.0.0',
-      description: 'API para gestionar órdenes',
+      title: "Order Management System",
+      version: "1.0.0",
+      description: "API para gestionar órdenes",
     },
     servers: [
       {
-        url: 'http://localhost:3001',
-        description: 'Servidor de desarrollo',
+        url: "http://localhost:3001",
+        description: "Servidor de desarrollo",
       },
     ],
     components: {
       schemas: {
         Order: {
-          type: 'object',
+          type: "object",
           properties: {
             id: {
-              type: 'string',
-              description: 'Identificador único de la orden',
+              type: "string",
+              description: "Identificador único de la orden",
             },
             customer_name: {
-              type: 'string',
-              description: 'Nombre del cliente',
+              type: "string",
+              description: "Nombre del cliente",
             },
             item: {
-              type: 'string',
-              description: 'Artículo solicitado',
+              type: "string",
+              description: "Artículo solicitado",
             },
             quantity: {
-              type: 'integer',
-              description: 'Cantidad del artículo',
+              type: "integer",
+              description: "Cantidad del artículo",
             },
             status: {
-              type: 'string',
-              enum: ['pending', 'completed', 'cancelled'],
-              description: 'Estado de la orden',
+              type: "string",
+              enum: ["pending", "completed", "cancelled"],
+              description: "Estado de la orden",
             },
             created_at: {
-              type: 'string',
-              format: 'date-time',
-              description: 'Fecha y hora de creación',
+              type: "string",
+              format: "date-time",
+              description: "Fecha y hora de creación",
             },
           },
-          required: ['customer_name', 'item', 'quantity'],
+          required: ["customer_name", "item", "quantity"],
         },
         OrderCreation: {
-          type: 'object',
+          type: "object",
           properties: {
             customer_name: {
-              type: 'string',
+              type: "string",
             },
             item: {
-              type: 'string',
+              type: "string",
             },
             quantity: {
-              type: 'integer',
+              type: "integer",
             },
             status: {
-              type: 'string',
-              enum: ['pending', 'completed', 'cancelled'],
+              type: "string",
+              enum: ["pending", "completed", "cancelled"],
             },
           },
-          required: ['customer_name', 'item', 'quantity'],
+          required: ["customer_name", "item", "quantity"],
         },
         PaginatedOrders: {
-          type: 'object',
+          type: "object",
           properties: {
             data: {
-              type: 'array',
+              type: "array",
               items: {
-                $ref: '#/components/schemas/Order',
+                $ref: "#/components/schemas/Order",
               },
             },
             meta: {
-              type: 'object',
+              type: "object",
               properties: {
                 total: {
-                  type: 'integer',
+                  type: "integer",
                 },
                 page: {
-                  type: 'integer',
+                  type: "integer",
                 },
                 page_size: {
-                  type: 'integer',
+                  type: "integer",
                 },
                 total_pages: {
-                  type: 'integer',
+                  type: "integer",
                 },
                 has_next_page: {
-                  type: 'boolean',
+                  type: "boolean",
                 },
                 has_prev_page: {
-                  type: 'boolean',
+                  type: "boolean",
                 },
               },
             },
           },
         },
         Error: {
-          type: 'object',
+          type: "object",
           properties: {
             message: {
-              type: 'string',
+              type: "string",
             },
           },
         },
       },
     },
   },
-  apis: ['./src/docs/*.ts'], 
+  apis: ["./src/docs/*.ts"],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
