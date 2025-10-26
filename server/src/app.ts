@@ -27,7 +27,7 @@ server.use(
   "/docs",
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec, {
-    customSiteTitle: "Order Management System",
+    customSiteTitle: "Documentación API - Sistema de Gestión de Órdenes",
   })
 );
 // server.use(express.urlencoded({ extended: true })); //* Para poder recibir datos en el body de las peticiones POST y PUT

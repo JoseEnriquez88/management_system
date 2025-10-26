@@ -4,7 +4,7 @@ const options = {
   definition: {
     openapi: "3.1.0",
     info: {
-      title: "Order Management System",
+      title: "Sistema de Gestión de Órdenes",
       version: "1.0.0",
       description: "API para gestionar órdenes",
     },
