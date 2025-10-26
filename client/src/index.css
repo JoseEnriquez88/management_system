@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import "tailwindcss";
+
+:root {
+}
+
+@theme inline {
+  /* *COLORS */
+
+  /* *FONTS */
+  --font-ms-bebas: "Bebas Neue", cursive;
+}
+
+@layer utilities {
+}
